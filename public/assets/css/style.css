@@ -1,0 +1,86 @@
+body{
+    background-image: url("../img/burger1.webp");
+    background-repeat: no-repeat;
+    background-size: 100% 117%;
+    color: black;
+    text-align: center;
+    width: 100%;
+    position: relative;
+    font-family: 'Concert One', cursive;
+    letter-spacing: 2px;
+}
+
+ul{
+    font-family: 'Roboto', sans-serif;
+    background-color: rgb(255, 255, 255,0.85);
+    width: 500px;
+    list-style: none;
+    margin: 0 auto;
+    float: left;
+    margin: 20px;
+    border: black solid 2px;
+    padding-bottom: 30px;
+  
+}
+
+li{
+    text-align: left;
+    font-size: 17px;
+    padding: 15px;
+    
+}
+
+.ul{
+    margin: 0 auto;
+    width: 1200px;
+    height: 530px;
+    margin-top: 40px;
+   
+    
+}
+
+.heading{
+    background-color: rgb(255, 255, 255,0.9);
+    width: 750px;
+    margin: 0 auto;
+    padding-bottom: 30px;
+    padding-top: 10px;
+    margin-top: 40px;
+    border: black solid 2px;
+}
+
+button{
+    background-color: blue;
+    color: white;
+    padding:10px;
+    font-family: 'Roboto', sans-serif;
+    border: white solid 2px;
+   margin-left: 20px;
+    letter-spacing: 2px;
+
+}
+
+button:hover{
+    background-color: orange;
+    color: white;
+}
+
+#submitBurger{
+    margin-top: 20px;
+}
+
+label{
+    font-family: 'Roboto', sans-serif;
+} 
+
+input{
+    width: 230px;
+}
+
+h1{
+    font-family: 'Concert One', cursive;
+}
+
+p{
+    display: inline-block;
+}
