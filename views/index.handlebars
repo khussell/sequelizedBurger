@@ -1,0 +1,37 @@
+<div class= "heading">
+<h1>Eat-Da-Burger</h1>
+
+<form>
+    <label for="whatBurger">Enter a type of burger you would like to eat:</label>
+    <input type="text" id="whatBurger">
+    <br>
+    <button type="submit" id="submitBurger">Submit</button>
+</form>
+</div>
+
+<div class="ul">
+<ul class="notEaten">
+    <h1>Not Eaten</h1>
+    {{#each burgers}}
+    {{#if devoured}}
+    {{else}}
+    <li>
+        <p>{{id}}. {{burger_name}}</p>
+        <button class="devour" data-id="{{id}}" data-devoured="false">Devour it!</button>
+    </li>
+    {{/if}}
+    {{/each}}
+</ul>
+
+<ul class="eaten">
+    <h1>Eaten</h1>
+    {{#each burgers}}
+    {{#if devoured}}
+    <li>
+        <p>{{id}}. {{burger_name}}</p>
+        <button class="remake" data-id="{{id}}" data-devoured="true">Remake Burger!</button>
+    </li>
+    {{/if}}
+    {{/each}}
+</ul>
+</div>
