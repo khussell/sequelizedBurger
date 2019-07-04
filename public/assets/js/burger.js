@@ -1,3 +1,7 @@
+$.get("/")
+
+
+
 
 $(document).ready(function () {
 
