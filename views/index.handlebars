@@ -13,11 +13,16 @@
 <ul class="notEaten">
     <h1>Not Eaten</h1>
     {{#each burgers}}
-    {{#if devoured}}
+    {{#if isDevoured}}
     {{else}}
     <li>
-        <p>{{id}}. {{burger_name}}</p>
+        <p>{{id}}. {{name}}</p>
+         <button class="delete" data-deleteId="{{id}}">Delete Burger</button>
+        <br>
+        <label for="input{{id}}">Who will eat this burger?</label>
+        <input id="input{{id}}" type="text">
         <button class="devour" data-id="{{id}}" data-devoured="false">Devour it!</button>
+       
     </li>
     {{/if}}
     {{/each}}
@@ -26,9 +31,9 @@
 <ul class="eaten">
     <h1>Eaten</h1>
     {{#each burgers}}
-    {{#if devoured}}
+    {{#if isDevoured}}
     <li>
-        <p>{{id}}. {{burger_name}}</p>
+        <p>{{id}}. {{name}} eaten by {{eater}}</p>
         <button class="remake" data-id="{{id}}" data-devoured="true">Remake Burger!</button>
     </li>
     {{/if}}
