@@ -3,9 +3,12 @@ var db = require("../models");
 module.exports = function (app) {
 
 
+
+
     app.get("/api/eaters", function(req,res){
-        db.Eater.findAll({}).then(function(dbEaters){
-            res.json(dbEaters)
+        db.Eater.findAll({
+        }).then(function(data){
+            res.json(data)  
         })
     })
  

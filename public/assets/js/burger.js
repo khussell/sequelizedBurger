@@ -29,20 +29,24 @@ $(document).ready(function () {
         var id = $(this).data("id")
         var eater = { eaterName: $("#input" + id).val().trim() }
 
+
         $.post("/api/eaters", eater).then(function (data) {
-            var eaterId = {EaterId: data.id,
-                           id: id}
-            
+            var eaterId = {
+                EaterId: data.id,
+                id: id,
+                isDevoured: true
+            }
+
             console.log(eaterId)
             $.ajax({
                 method: "PUT",
                 url: "/api/burgers",
                 data: eaterId
-              })
-                .then(function() {
-                 // location.reload();
+            })
+                .then(function () {
+                    location.reload();
                 });
-           
+
         })
 
 
