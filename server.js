@@ -19,8 +19,8 @@ app.use(express.static("public"));
 
 // Routes
 // =============================================================
-require("./routes/html-routes.js")(app);
-//require("./routes/burger-api-routes.js")(app);
+require("./routes/html-routes")(app);
+require("./routes/burger-api-routes")(app);
 //require("./routes/eater-api-routes.js")(app);
 
 // Syncing our sequelize models and then starting our Express app
@@ -30,3 +30,5 @@ db.sequelize.sync().then(function() {
     console.log("App listening on PORT " + PORT);
   });
 });
+
+module.exports = app;
