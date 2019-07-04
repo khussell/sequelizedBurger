@@ -1,6 +1,6 @@
 module.exports = function(sequelize, DataTypes){
     var Eater = sequelize.define("Eater", {
-        name: {
+        eaterName: {
             type: DataTypes.STRING,
             allowNull: false,
             validate: {

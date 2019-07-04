@@ -21,7 +21,7 @@ app.use(express.static("public"));
 // =============================================================
 require("./routes/html-routes")(app);
 require("./routes/burger-api-routes")(app);
-//require("./routes/eater-api-routes.js")(app);
+require("./routes/eater-api-routes.js")(app);
 
 // Syncing our sequelize models and then starting our Express app
 // =============================================================

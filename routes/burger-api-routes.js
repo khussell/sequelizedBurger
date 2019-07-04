@@ -22,4 +22,17 @@ module.exports = function (app) {
             res.json(results)
         })
     })
+
+    app.put("/api/burgers", function(req, res) {
+        console.log(req.body)
+        db.Burger.update(req.body,
+          {
+            where: {
+              id: req.body.id
+            }
+          })
+          .then(function(dbPost) {
+            res.json(dbPost);
+          });
+      });
 }
