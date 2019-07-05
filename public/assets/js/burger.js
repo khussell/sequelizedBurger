@@ -1,4 +1,4 @@
-$.get("/")
+
 
 
 
@@ -50,12 +50,39 @@ $(document).ready(function () {
                 .then(function () {
                     location.reload();
                 });
+        })
+    })
 
+
+
+    $(".remake").on("click", function () {
+        var id = $(this).data("id")
+        var data = {
+            id: id,
+            isDevoured: false,
+        }
+        $.ajax({
+            method: "PUT",
+            url: "/api/burgers",
+            data: data
+        }).then(function () {
+            location.reload(true)
         })
 
-
-
-
-
     })
+
+
+    $(".delete").on("click", function() {
+        var data = {
+            id: $(this).data("deleteid")
+        }
+        $.ajax({
+            method: "DELETE",
+            url: "/api/burgers",
+            data: data
+        }).then(function(){
+            location.reload()
+        })
+    })
+
 })

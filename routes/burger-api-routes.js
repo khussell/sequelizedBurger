@@ -3,6 +3,7 @@ var db = require("../models");
 module.exports = function (app) {
     app.get("/", function (req, res) {
         db.Burger.findAll({
+            include: [db.Eater]
         }).then(function (data) {
             console.log(data)
             res.render("index", { burgers: data })
@@ -28,6 +29,7 @@ module.exports = function (app) {
 
     app.put("/api/burgers", function (req, res) {
         console.log(req.body)
+        if(req.body.EaterId){
         db.Burger.update(req.body,
             {
                 where: {
@@ -37,5 +39,30 @@ module.exports = function (app) {
             .then(function (dbPost) {
                 res.json(dbPost);
             });
+        }else{
+            db.Burger.update(req.body,
+                {
+                    where: {
+                        id: req.body.id
+                    }
+                }).then(function(dbPost){
+                    res.json(dbPost)
+                })
+        }
     });
+
+
+
+    app.delete("/api/burgers", function(req, res) {
+        
+        db.Burger.destroy({
+          where: {
+            id: req.body.id
+          }
+        }).then(function(dbTodo) {
+          res.json(dbTodo);
+        });
+    
+      });
+
 }

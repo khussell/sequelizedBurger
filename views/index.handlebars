@@ -33,7 +33,7 @@
     {{#each burgers}}
     {{#if isDevoured}}
     <li>
-        <p>{{id}}. {{name}} eaten by {{Eater}}</p>
+        <p>{{id}}. {{name}} eaten by {{Eater.eaterName}}</p>
         <button class="remake" data-id="{{id}}" data-devoured="true">Remake Burger!</button>
     </li>
     {{/if}}
